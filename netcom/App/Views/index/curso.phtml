@@ -1,0 +1,251 @@
+<?php
+require 'php/cursos.php';
+require 'php/detalhes_cursos.php';
+?>
+<link rel="stylesheet" href="css/curso.css">
+<section id="curso" class="d-flex text-center align-items-center" style="background-image: url('img/banner.webp');">
+    <div class="container">
+        <div class="row pt-4">
+            <div class="col-md-12">
+                <button class="btn btn-lg btn-primary text-light py-2 px-3 fw-bold">
+                    <?php
+                    if($_GET['id'] >= 0 && $_GET['id'] < 10){
+                    ?>
+                    <?= $cursos[$_GET['id']]." Presencial"?>
+                    <?php
+                    } elseif($_GET['id'] > 9 && $_GET['id'] < 15){
+                    ?>
+                    <?= $cursos[$_GET['id']] ?>
+                    <?php
+                    } elseif($_GET['id'] > 24){
+                    ?>
+                    <?= $cursos[$_GET['id']-10] ?>
+                    <?php
+                    } elseif($_GET['id'] > 14 && $_GET['id'] < 25){
+                    ?>
+                    <?= $cursos[$_GET['id']-15]." EAD"?>
+                    <?php
+                    }
+                    ?>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="my-5">
+    <div class="container">
+        <div class="mb-3">
+            <a href="/" class="fw-bold btn btn-info"><i class="fa-solid fa-backward me-2"></i>Voltar</a>
+        </div>
+        <div id="pre-requisito">
+            <h6>
+                <span><i class="fa-solid fa-plus"></i></span>
+                Pré-Requisitos
+            </h6>
+            <div class="card escondido">
+                <div class="card-body">
+                    <?php
+                    if(($_GET['id'] >= 0 && $_GET['id'] < 10) || ($_GET['id'] > 14 && $_GET['id'] < 25)){
+                    ?>
+                    <p>Ter concluído ou estar cursando o último ano do ensino médio.</p>
+                    <?php
+                    } elseif($_GET['id'] > 9 && $_GET['id'] < 15){
+                    ?>
+                    <p>Não tem pré-requisito.</p>
+                    <?php
+                    } elseif($_GET['id'] > 24){
+                    ?>
+                    <p><?= $detalhes_nr[$_GET['id']-25][0] ?></p>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div id="carga_horaria" style="<?= $_GET['id'] > 24 ? 'display:none;' : '' ?>">
+            <h6>
+                <span><i class="fa-solid fa-plus"></i></span>
+                Carga Horária
+            </h6>
+            <div class="card escondido">
+                <div class="card-body">
+                    <?php
+                    if($_GET['id'] >= 0 && $_GET['id'] < 15){
+                    ?>
+                    <p><?= $detalhes_cursos[$_GET['id']][1] ?></p>
+                    <p>Carga Horária Total: <?= $detalhes_cursos[$_GET['id']][2] ?></p>
+                    <?php
+                    } elseif($_GET['id'] > 14 && $_GET['id'] < 25){
+                    ?>
+                    <p>
+                    De acordo com a resolução Nº 150/2019 do Conselho Estadual de Educação (CEE/MA) os cursos técnicos na modalidade a distância (EAD) possuem suas cargas horárias divididas em AULAS REMOTAS (70% da carga horária) e PRESENCIAS (30% da carga horária). 
+                    </p>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div id="horario_aula" style="<?= $_GET['id'] > 24 ? 'display:none;' : '' ?>">
+            <h6>
+                <span><i class="fa-solid fa-plus"></i></span>
+                Horário de Aula
+            </h6>
+            <div class="card escondido">
+                <div class="card-body">
+                    <?php
+                    if($_GET['id'] >= 0 && $_GET['id'] < 10){
+                    ?>
+                    <ul>
+                        <li>
+                            <p>Turmas pela manhã de segunda a sexta das 8h30h às 11h30</p>
+                        </li>
+                        <li>
+                            <p>Turmas à noite de segunda a sexta das 19h às 22h</p>
+                        </li>
+                    </ul>
+                    <?php
+                    } elseif($_GET['id'] == 10 || $_GET['id'] == 11){
+                    ?>
+                    <ul>
+                        <li>
+                            <p>03 (três) aulas por semana das 19h às 22h</p>
+                        </li>
+                        <li>
+                            <p>02 (duas) aulas por semana no caso de divisão de turmas para aulas práticas</p>
+                        </li>
+                        <li>
+                            <p>Os dias da semana para as aulas são estabelecimento pela coordenação do curso</p>
+                        </li>
+                    </ul>
+                    <?php
+                    } elseif($_GET['id'] == 12 || $_GET['id'] == 14){
+                    ?>
+                    <ul>
+                        <li>
+                            <p>Aos sábados das 8h às 12h</p>
+                        </li>
+                    </ul>
+                    <?php
+                    } elseif($_GET['id'] == 13){
+                    ?>
+                    <ul>
+                        <li>
+                            <p>02 (três) aulas por semana das 19h às 22h</p>
+                        </li>
+                        <li>
+                            <p>Os dias da semana para as aulas são estabelecimento pela coordenação do curso</p>
+                        </li>
+                    </ul>
+                    <?php
+                    } elseif($_GET['id'] > 14 && $_GET['id'] < 25){
+                    ?>
+                    <ul>
+                        <li>
+                            <p>Nas aulas gravadas o aluno poderá assistir remotamente em qualquer horário do dia</p>
+                        </li>
+                        <li>
+                            <p>Os encontros das aulas presenciais ocorrem quinzenalmente, às sextas das 19h às 22h e sábados das 8h às 12h</p>
+                        </li>
+                    </ul>
+                    <?php
+                    } 
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div id="objetivo_curso">
+            <h6>
+                <span><i class="fa-solid fa-plus"></i></span>
+                Objetivo do Curso
+            </h6>
+            <div class="card escondido">
+                <div class="card-body">
+                    <?php
+                    if(($_GET['id'] >= 0 && $_GET['id'] < 10) || ($_GET['id'] > 9 && $_GET['id'] < 15)){
+                    ?>
+                    <p><?= $detalhes_cursos[$_GET['id']][0] ?></p>
+                    <?php
+                    } elseif($_GET['id'] > 14 && $_GET['id'] < 25){
+                    ?>
+                    <p><?= $detalhes_cursos[$_GET['id']-15][0] ?></p>
+                    <?php
+                    } elseif($_GET['id'] > 24){
+                    ?>
+                    <p><?= $detalhes_nr[$_GET['id']-25][1] ?></p>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <?php
+        if($_GET['id'] >= 0 && $_GET['id'] < 15){
+        ?>
+        <div id="metodo_ensino">
+            <h6>
+                <span><i class="fa-solid fa-plus"></i></span>
+                Metodologia
+            </h6>
+            <div class="card escondido">
+                <div class="card-body">
+                    <p>Aulas presenciais em salas de aulas expositivas, e práticas em laboratórios especializados.</p>
+                </div>
+            </div>
+        </div>
+        <?php
+        }
+        ?>
+        <div id="matriz_curricular">
+            <h6>
+                <span><i class="fa-solid fa-plus"></i></span>
+                <?= $_GET['id'] > 24 ? 'Ementa' : 'Matriz Curricular' ?>
+            </h6>
+            <div class="card escondido">
+                <div class="card-body">
+                    <div class="table-responsive">
+                    <?php 
+                    $id = $_GET['id'];
+                    include "matriz_curricular/curso{$id}.html";
+                    ?>
+                    </div>
+                    <p><strong><?= $_GET['id'] > 24 ? 'Carga Horária: '.$detalhes_nr[$_GET['id']-25][2] : '' ?></strong></p>
+                </div>
+            </div>
+        </div>
+        <div id="documentos" style="<?= $_GET['id'] > 24 ? 'display:none;' : '' ?>">
+            <h6>
+                <span><i class="fa-solid fa-plus"></i></span>
+                Documentos Necessários Para Matrícula
+            </h6>
+            <div class="card escondido">
+                <div class="card-body">
+                    <ul>
+                        <?php
+                        if(($_GET['id'] >= 0 && $_GET['id'] < 10) || ($_GET['id'] > 14 && $_GET['id'] < 25) || ($_GET['id'] > 24)){
+                        ?>
+                        <li>
+                            <p>Cópia autenticada do certificado de Ensino Médio</p>
+                        </li>
+                        <?php
+                        }
+                        ?>
+                        <li>
+                            <p>Cópia autenticada da Identidade</p>
+                        </li>
+                        <li>
+                            <p>Cópia autenticada do CPF</p>
+                        </li>
+                        <li>
+                            <p>Cópia de comprovante de residência</p>
+                        </li>
+                        <li>
+                            <p>1 (uma) foto 3 X 4</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/curso.js"></script>

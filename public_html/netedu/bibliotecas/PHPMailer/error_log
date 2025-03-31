@@ -1,0 +1,16 @@
+[11-Mar-2025 13:55:31 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPMailer\PHPMailer\OAuthTokenProvider" not found in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php on line 36
+[13-Mar-2025 07:58:21 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPMailer\PHPMailer\OAuthTokenProvider" not found in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php on line 36
+[15-Mar-2025 09:53:21 UTC] PHP Fatal error:  Uncaught Error: Interface "PHPMailer\PHPMailer\OAuthTokenProvider" not found in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php on line 36
+[20-Mar-2025 09:55:22 UTC] PHP Fatal error:  Interface 'PHPMailer\PHPMailer\OAuthTokenProvider' not found in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php on line 37
+[22-Mar-2025 22:35:40 UTC] PHP Fatal error:  Interface 'PHPMailer\PHPMailer\OAuthTokenProvider' not found in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php on line 37
+[24-Mar-2025 10:31:30 UTC] PHP Fatal error:  Interface 'PHPMailer\PHPMailer\OAuthTokenProvider' not found in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php on line 37
+[26-Mar-2025 10:25:54 UTC] PHP Fatal error:  Interface 'PHPMailer\PHPMailer\OAuthTokenProvider' not found in /home/netcom/public_html/netedu/bibliotecas/PHPMailer/OAuth.php on line 37

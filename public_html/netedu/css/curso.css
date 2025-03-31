@@ -1,0 +1,17 @@
+#curso {
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 70vh; 
+    width: 100%; 
+}
+.escondido{
+    display: none;
+}
+h6{
+    background-color: #007BFE;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: -4px;
+}

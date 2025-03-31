@@ -1,0 +1,59 @@
+.borda{
+    border: 1px solid red;
+}
+button{
+    font-weight: bold;
+}
+body{
+    font-family: Helvetica, Arial, sans-serif;
+}
+.btn-custom{
+    border-radius: 500px;
+    text-transform: uppercase
+}
+.redondo{
+    border-radius: 50%;
+}
+#categorias{
+    background-color: rgb(55, 0, 255);
+    color: white;
+    font-weight: bold;
+}
+.saiba-mais{
+    border-radius: 20px;
+}
+video{
+    width: 40%;
+    margin-left: 30%;
+}
+@media (max-width: 575.98px) {
+    iframe{
+        aspect-ratio: 1 / 0.7;
+    }
+    .presencial{
+        margin-bottom:10px;
+    }
+    .fonte-menor{
+        font-size:0.9em;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    iframe{
+        aspect-ratio: 1 / 0.7;
+    }
+    .presencial{
+        margin-bottom:10px;
+    }
+    .fonte-menor{
+        font-size:0.9em;
+    }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+@media (min-width: 1200px) {
+
+}

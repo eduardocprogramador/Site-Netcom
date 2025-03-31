@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/a8f2f39768.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">  
+    <link rel="icon" href="img/logo.gif">
+    <link rel="stylesheet" href="css/layout.css">
+    <title>Netcom</title>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1289227242182403');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1289227242182403&ev=PageView&noscript=1"
+    /></noscript>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-light fixed-top navbar-transp">
+            <a href="#" class="navbar-brand ms-2">
+                <img src="img/logo_netcom.png" id="logo" width="140">
+            </a>
+            <a href="/inscricao" class="fw-bold btn btn-primary d-md-none me-2">Inscreva-se</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav-principal">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav-principal">
+                <ul class="navbar-nav d-flex justify-content-between w-100">
+                    <li class="nav-item mx-auto">
+                        <a href="/" class="nav-link fw-bold">Início</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a href="/contato" class="nav-link fw-bold">Contato</a>
+                    </li>
+                    <li class="nav-item mx-auto">
+                        <a href="/sobre_nos" class="nav-link fw-bold">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item dropdown mx-auto">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="cursosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Cursos
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="cursosDropdown">
+                            <a class="dropdown-item" href="/#cursos">Técnicos</a>
+                            <a class="dropdown-item" href="/?categoria=qualificacao#cursos">Qualificações</a>
+                            <a class="dropdown-item" href="/?categoria=normas#cursos">Normas Regulamentadoras</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown mx-auto">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="areaAlunoDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Área do Aluno
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="areaAlunoDropdown">
+                            <a class="dropdown-item" target="_blank" href="http://geracad.netcom-ma.com.br/geracadaluno/area_aluno.php">Histórico Escolar</a>
+                            <a class="dropdown-item" target="_blank" href="https://acad.netcom.edu.br/index.php">Biblioteca Netcom</a>
+                        </div>
+                    </li>
+                    <li class="nav-item mx-auto d-none d-md-block">
+                        <a href="/inscricao" class="fw-bold btn btn-primary">Inscreva-se</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="logo_whatsapp" class="position-fixed bottom-0 end-0 m-2 z-3">
+        <a href="https://api.whatsapp.com/send?phone=5598984254650">
+            <img src="img/whatsapp.png" width="60">
+        </a>
+    </div>
+    <?= $this->content() ?>
+    <footer>
+        <div class="container">
+            <div>
+                <p>&copy; 2025 - Netcom Sistemas e Soluções Tecnológicas. Todos os direitos reservados.</p>
+            </div>
+            <div>
+                <p><i class="fa-brands fa-whatsapp fa-lg mr-1"></i> (98) 98425-4650 <span class="mx-2">|</span><i class="fa-solid fa-phone mr-1"></i> (98) 4009-7000 <span class="mx-2">|</span> <i class="fa-solid fa-envelope mr-1"></i> matriculas@netcom.edu.br</p>
+            </div>
+            <div>
+                <p>Siga-nos:</p>
+                <a href="https://www.facebook.com/netcomoficial/" target="_blank" style="color: white; margin-right: 10px;">
+                    <i class="fa-brands fa-square-facebook fa-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/netcomoficial/?hl=pt-br" target="_blank" style="color: white;">
+                    <i class="fa-brands fa-instagram fa-2xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

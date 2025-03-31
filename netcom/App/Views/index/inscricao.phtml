@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="css/inscricao.css">
+<div class="container mt-4" id="inscricao">
+    <?php 
+    if(isset($_GET['mensagem_enviada']) && $_GET['mensagem_enviada'] == 1){ 
+    ?>
+    <div class="bg-success pt-2 text-white row justify-content-center mb-4">
+        <h5>Mensagem Enviada!</h5>
+    </div>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1289227242182403');
+    fbq('track', 'PageView');
+    fbq('track', 'Lead');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1289227242182403&ev=PageView&noscript=1"
+    /></noscript>
+    <?php 
+    } 
+    ?>
+    <div class="row d-flex justify-content-start">
+        <div class="col-1">
+            <a href="/" class="btn btn-primary">
+                <i class="fa-solid fa-backward-fast"></i>
+            </a>
+        </div>
+    </div>
+    <h4 class="text-center mb-4" id="inscrever">Inscrições</h4>
+    <h6 class="text-center mb-4">Selecione o curso pretendido e preencha as informações</h6>
+    <form action="/inscrever" method="post">
+        <div class="form-section">
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" name="nome" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Telefone</label>
+                    <input type="text" class="form-control" name="telefone" required placeholder="(XX) XXXXX-XXXX">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Modalidade</label>
+                    <select class="form-control" id="modalidade" name="modalidade" required>
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="tecnico">Técnico Presencial</option>
+                        <option value="tecnico_ead">Técnico EAD</option>
+                        <option value="qualificacao">Qualificação</option>
+                        <option value="nr">Normas Regulamentadoras</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                    <label class="form-label" style="display:none;" id="label-curso">Curso</label>
+
+                    <!-- Selects visíveis apenas via JS -->
+                    <select class="form-control curso-opcao" id="tecnico" style="display:none;">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="Eletrônica Presencial">Eletrônica</option>
+                        <option value="Eletrotécnica Presencial">Eletrotécnica</option>
+                        <option value="Eletromecânica Presencial">Eletromecânica</option>
+                        <option value="Informática Presencial">Informática</option>
+                        <option value="Mecatrônica Presencial">Mecatrônica</option>
+                    </select>
+
+                    <select class="form-control curso-opcao" id="tecnico_ead" style="display:none;">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="Automação Industrial EAD">Automação Industrial</option>
+                        <option value="Eletromecânica EAD">Eletromecânica</option>
+                        <option value="Eletrônica EAD">Eletrônica</option>
+                        <option value="Eletrotécnica EAD">Eletrotécnica</option>
+                        <option value="Mecânica EAD">Mecânica</option>
+                        <option value="Mecatrônica EAD">Mecatrônica</option>
+                        <option value="Telecomunicações EAD">Telecomunicações</option>
+                        <option value="Informática EAD">Informática</option>
+                        <option value="Redes de Computadores EAD">Redes de Computadores</option>
+                    </select>
+                    
+                    <select class="form-control curso-opcao" id="qualificacao" style="display:none;">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="Mecânica Automotiva e Injeção Eletrônica">Mecânica Automotiva e Injeção Eletrônica</option>
+                        <option value="Mecânica de Refrigeração">Mecânica de Refrigeração</option>
+                        <option value="Mecânica de Motocicletas">Mecânica de Motocicletas</option>
+                        <option value="Eletricista de Redes de Baixa e Alta Tensão">Eletricista de Redes de Baixa e Alta Tensão</option>
+                        <option value="Instalação de Sistema de Energia Solar">Instalação de Sistema de Energia Solar</option>
+                        <option value="Instalação de Rede de Fibra Óptica">Instalação de Rede de Fibra Óptica</option>
+                        <option value="Manutenção em Equipamentos Eletroeletrônicos">Manutenção em Equipamentos Eletroeletrônicos</option>
+                    </select>
+                    
+                    <select class="form-control curso-opcao" id="nr" style="display:none;">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="NR-10 Básico">NR-10 Básico</option>
+                        <option value="NR-10 SEP">NR-10 SEP</option>
+                        <option value="NR-10 Reciclagem">NR-10 Reciclagem</option>
+                        <option value="NR-35">NR-35</option>
+                        <option value="Direção Defensiva">Direção Defensiva</option>
+                    </select>
+
+                    <!-- Campo oculto para envio correto do curso -->
+                    <input type="hidden" name="curso" id="curso_real" style="margin-bottom: 25px">
+                </div>
+            </div>
+        </div>
+        <!--<div class="mb-4">
+            <h6>
+            Ao confirmar, você receberá um e-mail com as informações necessárias para finalizar seu processo de inscrição
+            </h6>
+        </div>-->
+        <div class="row mb-4">
+            <div class="col-md-4 offset-md-4">
+                <input type="submit" value="Enviar" class="form-control btn btn-primary buttons">
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+$(document).ready(function () {
+    let ultimoItemExibido = null;
+
+    $('#modalidade').on('change', function () {
+        const valor = $(this).val();
+
+        // Mostrar label do curso
+        $('#label-curso').show();
+
+        // Ocultar select anterior se houver
+        if (ultimoItemExibido) {
+            $('#' + ultimoItemExibido).hide().prop('disabled', true);
+        }
+
+        // Mostrar select atual
+        $('#' + valor).show().prop('disabled', false);
+
+        // Resetar valor do campo oculto
+        $('#curso_real').val('');
+
+        ultimoItemExibido = valor;
+    });
+
+    $('.curso-opcao').on('change', function () {
+        const valorSelecionado = $(this).val();
+        $('#curso_real').val(valorSelecionado);
+    });
+
+    // Verificação final no envio para garantir preenchimento
+    $('form').on('submit', function () {
+        const curso = $('#curso_real').val();
+        if (!curso) {
+            alert("Por favor, selecione um curso.");
+            return false; // impede o envio
+        }
+        return true;
+    });
+});
+</script>
+

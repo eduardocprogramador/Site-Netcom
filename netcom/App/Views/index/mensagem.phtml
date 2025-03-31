@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="css/mensagem.css">
+<div class="container mt-4" id="mensagem">
+    <?php 
+    if(isset($_GET['mensagem_enviada']) && $_GET['mensagem_enviada'] == 1){ 
+    ?>
+    <div class="bg-success pt-2 text-white row justify-content-center mb-4">
+        <h5>Mensagem Enviada!</h5>
+    </div>
+    <?php 
+    } 
+    ?>
+    <div class="row d-flex justify-content-start">
+        <div class="col-1">
+            <a href="/" class="btn btn-primary">
+                <i class="fa-solid fa-backward-fast"></i>
+            </a>
+        </div>
+    </div>
+    <h3 class="text-center mb-5" id="enviar_msg">Enviar Mensagem</h3>
+    <form action="/enviar_msg" method="post">
+    <div class="form-section">
+        <div class="row mb-4">
+            <div class="col-md-6 mb-4">
+                <label class="form-label">Nome</label>
+                <input type="text" class="form-control" name="nome" required>
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Telefone</label>
+                <input type="text" class="form-control" name="telefone" required placeholder="(XX) XXXXX-XXXX">
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-6 mb-4">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+        </div>
+        <div class="row mb-5">
+            <div class="col-md-12">
+                <label class="form-label">Descrição</label>
+                <textarea id="descricao" name="descricao" class="form-control" required></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-md-4 offset-md-4">
+            <input type="submit" value="Enviar" class="form-control btn btn-primary buttons">
+        </div>
+    </div>
+    </form>
+</div>
+<script src="js/mensagem.js"></script>
+    

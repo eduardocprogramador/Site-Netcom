@@ -1,0 +1,44 @@
+#contato{
+    padding-top:100px;
+}
+#contato-titulo{
+    margin-top:-40px;
+}
+#cards{
+    margin-bottom:70px;
+}
+a {
+    text-decoration: none;
+    color: inherit; 
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    padding: 20px;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.card i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.whatsapp-icon {
+    color: #25d366;
+}
+.email-icon {
+    color: #ff6f61;
+}
+.calendar-icon {
+    color: #007bff;
+}

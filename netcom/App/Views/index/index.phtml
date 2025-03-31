@@ -1,0 +1,203 @@
+<?php
+require 'php/cursos.php';
+$categoria = isset($_GET['categoria']) ? $_GET['categoria'] : '';
+$indice=0;
+if ($categoria === '') {
+    $cursos = array_slice($cursos, 0, 10);
+}
+if ($categoria === 'qualificacao') {
+    $cursos = array_slice($cursos, 10, 5);
+    $indice=10;
+}
+if ($categoria === 'normas') {
+    $cursos = array_slice($cursos, 15, 6);
+    $indice=25;
+}
+
+/*$busca = isset($_GET['busca']) ? trim($_GET['busca']) : '';
+function removerAcentos($string) {
+    return iconv('UTF-8', 'ASCII//TRANSLIT', $string);
+}
+$buscaNormalizada = strtolower(removerAcentos($busca));
+$cursos = array_filter($cursos, function ($curso) use ($buscaNormalizada) {
+    $cursoNormalizado = strtolower(removerAcentos($curso)); 
+    return stripos($cursoNormalizado, $buscaNormalizada) !== false; 
+});*/
+?>
+<link rel="stylesheet" href="css/index.css">
+<section>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/energia_solar.jpg" class="d-none d-sm-block w-100 c-img" style="filter:brightness(0.6);">
+                <img src="img/energia_solar_sm.JPG" class="d-block d-sm-none w-100 c-img" style="filter:brightness(0.6);">
+                <div class="carousel-caption d-flex flex-column flex-md-row align-items-center justify-content-center h-100">
+                    <div>
+                        <a href="/inscricao" class="btn btn-lg btn-primary text-light py-2 px-3 fw-bold fonte-menor" id="saiba_mais_turmas">
+                            Faça sua Inscrição
+                            <i class="fa-solid fa-play ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/energia_solar2.JPG" class="d-none d-sm-block w-100 c-img" style="filter:brightness(0.6);">
+                <img src="img/energia_solar2_sm.JPG" class="d-block d-sm-none w-100 c-img" style="filter:brightness(0.6);">
+                <div class="carousel-caption d-flex flex-column flex-md-row align-items-center justify-content-center h-100">
+                    <button class="btn btn-lg btn-warning text-light py-2 px-3 fw-bold fonte-menor">
+                        Cursos Técnicos e Qualificação – Calendário Turmas São Luís
+                    </button>
+                    <a href="/programacao" class="btn btn-lg btn-primary text-light py-2 px-3 fw-bold fonte-menor" id="saiba_mais_turmas">
+                        Saiba Mais
+                        <i class="fa-solid fa-play ms-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/nr_capa.jpg" class="d-none d-sm-block w-100 c-img" style="filter:brightness(0.6);">
+                <img src="img/nr_capa_sm.JPG" class="d-block d-sm-none w-100 c-img" style="filter:brightness(0.6);">
+                <div class="carousel-caption d-flex flex-column flex-md-row align-items-center justify-content-center h-100">
+                    <button class="btn btn-lg btn-warning text-light py-2 px-3 fw-bold fonte-menor">
+                        Normas Regulamentadoras (NR) – Calendário das Novas Turmas
+                    </button>
+                    <a href="/programacao_nr" class="btn btn-lg btn-primary text-light py-2 px-3 fw-bold fonte-menor" id="saiba_mais_turmas">
+                        Saiba Mais
+                        <i class="fa-solid fa-play ms-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="img/capa_paraupebas.PNG" class="d-none d-sm-block w-100 c-img" style="filter:brightness(0.6);">
+                <img src="img/capa_paraupebas_sm.PNG" class="d-block d-sm-none w-100 c-img" style="filter:brightness(0.6);">
+                <div class="carousel-caption d-flex flex-column flex-md-row align-items-center justify-content-center h-100">
+                    <button class="btn btn-lg btn-warning text-light py-2 px-3 fw-bold fonte-menor">
+                        Cursos Técnicos – Calendário Turmas Parauapebas
+                    </button>
+                    <a href="/programacao_parauapebas" class="btn btn-lg btn-primary text-light py-2 px-3 fw-bold fonte-menor" id="saiba_mais_turmas">
+                        Saiba Mais
+                        <i class="fa-solid fa-play ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+<section>
+    <div class="container pt-4 pb-3">
+        <h4 class="mb-4 text-center">
+            <i class="fa-solid fa-location-dot mr-2"></i>
+            Localização
+        </h4>
+        <p class="mb-3">Rua Antonio Vieira, 37 - COHAB Anil IV, São Luís - MA, 65051-670</p>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <video controls>
+                    <source src="video_netcom.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="col-md-6">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.890562180975!2d-44.21825542632363!3d-2.5425474974357902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f692204da1eccf%3A0xc1c0ace7db62a5a7!2sNetcom%20Treinamentos%20e%20Solu%C3%A7%C3%B5es%20Tecnol%C3%B3gicas!5e0!3m2!1spt-BR!2sbr!4v1739741563076!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="cursos">
+    <div class="mx-1 my-5">
+        <div class="row">
+            <div class="col-lg-3 mb-4">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" id="categorias">Categorias</li>
+                        <li class="list-group-item" style="<?= ($categoria == '' ? 'background-color: #E8F0FE;' : '') ?>">
+                            <a href="/#cursos" class="text-decoration-none">
+                                <i class="fa-solid fa-play ml-2"></i>
+                                Técnicos
+                            </a>
+                        </li>
+                        <li class="list-group-item" style="<?= ($categoria == 'qualificacao' ? 'background-color: #E8F0FE;' : '') ?>">
+                            <a href="/?categoria=qualificacao#cursos" class="text-decoration-none">
+                                <i class="fa-solid fa-play ml-2"></i>
+                                Qualificações
+                            </a>
+                        </li>
+                        <li class="list-group-item" style="<?= ($categoria == 'normas' ? 'background-color: #E8F0FE;' : '') ?>">
+                            <a href="/?categoria=normas#cursos" class="text-decoration-none">
+                                <i class="fa-solid fa-play ml-2"></i>
+                                Normas Regulamentadoras
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="mb-4">
+                    <!--<form action="http://localhost:8080#cursos" method="get">
+                        <div class="row">
+                            <div class="col-md-6 offset-md-3">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Pesquisar Cursos" name="busca">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>-->
+                    <?= ($categoria == '' ? '<h4>Cursos Técnicos</h4>' : '') ?>
+                    <?= ($categoria == 'qualificacao' ? '<h4>Cursos de Qualificação</h4>' : '') ?>
+                    <?= ($categoria == 'normas' ? '<h4>Normas Regulamentadoras</h4>' : '') ?>
+                </div>
+                <div class="row">
+                    <?php 
+                    foreach ($cursos as $key => $value){ 
+                    ?>
+                    <div class="col-6 col-lg-4 col-xl-3">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="img/<?= $img[$key+$indice] ?>">
+                            <div class="card-body">
+                                <h6 class="card-title"><?= $value ?></h6>
+                                <?php 
+                                if ($key+$indice > 9){ 
+                                ?>
+                                <a class="btn btn-primary btn-block saiba-mais fw-bold" href="/curso?id=<?= $key+$indice ?>">Saiba Mais</a>
+                                <?php 
+                                } else{
+                                ?>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a class="btn btn-primary saiba-mais presencial fw-bold" href="/curso?id=<?= $key+$indice ?>">Presencial</a>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <a class="btn btn-info saiba-mais fw-bold" href="/curso?id=<?= $key+$indice+15 ?>">EAD</a>
+                                    </div>
+                                </div>
+                                <?php 
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php 
+                    } 
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
