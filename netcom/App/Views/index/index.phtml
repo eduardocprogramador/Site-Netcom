@@ -96,21 +96,16 @@ $cursos = array_filter($cursos, function ($curso) use ($buscaNormalizada) {
         </button>
     </div>
 </section>
-<section>
+<section class="d-lg-none d-block">
     <div class="container pt-4 pb-3">
-        <h4 class="mb-4 text-center">
-            <i class="fa-solid fa-location-dot mr-2"></i>
-            Localização
-        </h4>
-        <p class="mb-3">Rua Antonio Vieira, 37 - COHAB Anil IV, São Luís - MA, 65051-670</p>
         <div class="row">
             <div class="col-md-6 mb-3">
-                <video controls>
+                <video controls class="w-100" style="max-height: 350px;">
                     <source src="video_netcom.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="col-md-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3985.890562180975!2d-44.21825542632363!3d-2.5425474974357902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f692204da1eccf%3A0xc1c0ace7db62a5a7!2sNetcom%20Treinamentos%20e%20Solu%C3%A7%C3%B5es%20Tecnol%C3%B3gicas!5e0!3m2!1spt-BR!2sbr!4v1739741563076!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="col-md-6 mb-3 d-flex justify-content-center">
+                <img src="img/Propoganda de NRs_Abr2025.png" class="img-fluid" style="max-height: 350px;">
             </div>
         </div>
     </div>
@@ -141,6 +136,14 @@ $cursos = array_filter($cursos, function ($curso) use ($buscaNormalizada) {
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div class="mt-3 d-none d-lg-block text-center">
+                    <video controls class="w-75">
+                        <source src="video_netcom.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="mt-3 d-none d-lg-block text-center">
+                    <img src="img/Propoganda de NRs_Abr2025.png" class="w-75">
                 </div>
             </div>
             <div class="col-md-9">

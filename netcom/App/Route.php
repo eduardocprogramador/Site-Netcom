@@ -66,6 +66,21 @@ class Route extends Bootstrap{
             'controller' => 'indexController',
             'action' => 'nr'
         );
+        $routes['estrutura']=array(
+            'route' => '/estrutura',
+            'controller' => 'indexController',
+            'action' => 'estrutura'
+        );
+        $routes['galeria_fotos']=array(
+            'route' => '/galeria_fotos',
+            'controller' => 'indexController',
+            'action' => 'galeria_fotos'
+        );
+        $routes['localizacao']=array(
+            'route' => '/localizacao',
+            'controller' => 'indexController',
+            'action' => 'localizacao'
+        );
         $this->setRoutes($routes);
     }
 

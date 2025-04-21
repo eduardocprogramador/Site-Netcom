@@ -22,10 +22,6 @@ body{
 .saiba-mais{
     border-radius: 20px;
 }
-video{
-    width: 40%;
-    margin-left: 30%;
-}
 @media (max-width: 575.98px) {
     iframe{
         aspect-ratio: 1 / 0.7;

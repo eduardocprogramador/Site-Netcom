@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H8NKYBL6P0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-H8NKYBL6P0');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/a8f2f39768.js" crossorigin="anonymous"></script>
@@ -44,8 +53,16 @@
                     <li class="nav-item mx-auto">
                         <a href="/contato" class="nav-link fw-bold">Contato</a>
                     </li>
-                    <li class="nav-item mx-auto">
-                        <a href="/sobre_nos" class="nav-link fw-bold">Sobre Nós</a>
+                    <li class="nav-item dropdown mx-auto">
+                        <a class="nav-link dropdown-toggle fw-bold" href="#" id="cursosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Nossa Empresa
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="cursosDropdown">
+                            <a class="dropdown-item" href="/sobre_nos">Sobre Nós</a>
+                            <!--<a class="dropdown-item" href="/estrutura">Nossa Estrutura</a>-->
+                            <a class="dropdown-item" href="/galeria_fotos">Galeria de Fotos e Vídeos</a>
+                            <a class="dropdown-item" href="/localizacao">Nossa Localização</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown mx-auto">
                         <a class="nav-link dropdown-toggle fw-bold" href="#" id="cursosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -74,8 +91,8 @@
         </nav>
     </header>
     <div id="logo_whatsapp" class="position-fixed bottom-0 end-0 m-2 z-3">
-        <a href="https://api.whatsapp.com/send?phone=5598984254650">
-            <img src="img/whatsapp.png" width="60">
+        <a id="whatsapp-button" href="https://api.whatsapp.com/send?phone=5598984254650">
+            <img src="img/whatsapp.png" width="65">
         </a>
     </div>
     <?= $this->content() ?>
@@ -99,5 +116,24 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const whatsappButton = document.getElementById("whatsapp-button");
+            if (whatsappButton) {
+                whatsappButton.addEventListener("click", function () {
+                    // Evento de conversão do Google Ads
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-16926874853/eoQ4CP_Xx7QaEOW5roc_'
+                    });
+                    // Evento personalizado para o Google Analytics
+                    gtag('event', 'whatsapp_click', {
+                        'event_category': 'Engajamento',
+                        'event_label': 'Botão WhatsApp Flutuante',
+                        'value': 1
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html>

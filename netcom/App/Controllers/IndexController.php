@@ -36,6 +36,15 @@ class IndexController extends Action{
     public function nr(){
         $this->render('nr');
     }
+    public function estrutura(){
+        $this->render('estrutura');
+    }
+    public function galeria_fotos(){
+        $this->render('galeria');
+    }
+    public function localizacao(){
+        $this->render('localizacao');
+    }
     public function enviar_msg(){
         ob_start();
         require 'processa_envio_msg.php';
